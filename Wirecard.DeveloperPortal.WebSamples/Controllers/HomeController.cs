@@ -77,7 +77,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             input.Country = "";
             input.Currency = "";
             input.Extra = "";
-            input.TurkcellServiceId = "20923735";
+            input.TurkcellServiceId = "";
             #endregion
             var saleWithTicketResult = _proApiApiPlusService.SaleWithTicket(token, input);
             return Redirect(saleWithTicketResult.RedirectUrl);
@@ -121,9 +121,9 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             input.OnErrorSMS = "basarisiz odeme yaptiniz";
             input.RequestGsmOperator = 0;
             input.RequestGsmType = 0;
-            input.CustomerIpAddress = "140.127.134.33";
+            input.CustomerIpAddress = "127.0.0.1";
             input.Extra = "";
-            input.TurkcellServiceId = "20923735";
+            input.TurkcellServiceId = "";
             #endregion
             var result = _proApiApiPlusService.SaleWithConfirm(token, input);
             return View(result);
