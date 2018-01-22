@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.wirecard.com.tr/services/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://services.mikro-odeme.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.wirecard.com.tr/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.wirecard.com.tr/services/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:import namespace="http://services.mikro-odeme.com/" />
+      <s:element name="SaleWithConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MAuthToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSaleInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendOrderResult" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="tns:ArrayOfMSaleProduct" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedSMSObjectId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendNotificationSMS" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnSuccessfulSMS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnErrorSMS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TurkcellServiceId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerIpAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMSaleProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MSaleProduct" nillable="true" type="tns:MSaleProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSaleProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductCategory" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Unit" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaleWithConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleWithConfirmResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderObjectId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTransactionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MicroPaymentResults" type="tns:ArrayOfMMicroPaymentOutput" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMMicroPaymentOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MMicroPaymentOutput" nillable="true" type="tns:MMicroPaymentOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MMicroPaymentOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentObjectId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaleWithoutConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleWithoutConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleWithoutConfirmResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleWithoutConfirmTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleWithoutConfirmTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleWithoutConfirmTestResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSaleResultResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResultMPAY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResultMPAYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSaleResultMPAYResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResult2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaleResult2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSaleResult2Result" type="tns:MSaleResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderObjectId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTransactionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MicroPaymentResults" type="tns:ArrayOfMMicroPaymentOutput" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfMSaleProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryMicroPayments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MQueryInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MQueryInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryMicroPaymentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMicroPaymentsResult" type="tns:MQueryOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MQueryOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryResultItems" type="tns:ArrayOfQueryResultItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQueryResultItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QueryResultItem" nillable="true" type="tns:QueryResultItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QueryResultItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderObjectId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTransactionDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaleWithTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleTicketInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleTicketInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendOrderResult" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedSMSObjectId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="tns:ArrayOfMSaleProduct" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendNotificationSMS" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnSuccessfulSMS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnErrorSMS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SuccessfulPageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorPageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TurkcellServiceId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaleWithTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleWithTicketResult" type="tns:MSaleTicketOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleTicketOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketObjectId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RedirectUrl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaleWithTicketMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleTicketInputExtended" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleTicketInputExtended">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MSaleTicketInput">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Msisdn" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SaleWithTicketMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleWithTicketMPResult" type="tns:MSaleTicketOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="ticketObjectId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelTicketResult" type="tns:MResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="ticketObjectId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTicketResult" type="tns:MResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBokuPricePoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBokuPricePointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBokuPricePointsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditCardProxy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s2:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s2:CreditCardProxyInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditCardProxyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCardProxyResult" type="s2:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSaleWithOtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSaleInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSaleWithOtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartSaleWithOtpResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResumeSaleWithOtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="otp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResumeSaleWithOtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResumeSaleWithOtpResult" type="tns:MSaleOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketForMsisdnForwarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="redirectUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketForMsisdnForwardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTicketForMsisdnForwardingResult" type="tns:TicketOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TicketOutput">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MResult">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RedirectUrl" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="StartSubscriptionWithToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MTokenSaleInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MTokenSaleInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tokenId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstallmentCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="tns:ArrayOfMSaleProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StartSubscriptionWithTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartSubscriptionWithTokenResult" type="tns:MSaleOutputCreditCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSaleOutputCreditCard">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MSaleOutput">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="BasePrice" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="SessionObjectId" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExtraParam" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditCardObjectId" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="MaskedCreditCardNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorURL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuccessURL" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CCSaleTypeId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://services.mikro-odeme.com/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="MAuthToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CreditCardProxyInput">
+        <s:complexContent mixed="false">
+          <s:extension base="s2:MSaleInput">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Data" type="s2:CreditCardProxyData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MSaleInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendOrderResult" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="s2:ArrayOfMSaleProduct" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedSMSObjectId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendNotificationSMS" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnSuccessfulSMS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnErrorSMS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestGsmType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TurkcellServiceId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerIpAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMSaleProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MSaleProduct" nillable="true" type="s2:MSaleProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSaleProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductCategory" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Unit" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CreditCardProxyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCardExpireMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCardExpireYear" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardOwner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSaleOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderObjectId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gsm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTransactionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MPAY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MicroPaymentResults" type="s2:ArrayOfMMicroPaymentOutput" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMMicroPaymentOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MMicroPaymentOutput" nillable="true" type="s2:MMicroPaymentOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MMicroPaymentOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentObjectId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaleWithConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleWithConfirm" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleWithConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithoutConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleWithoutConfirm" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithoutConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleWithoutConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithoutConfirmTestSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleWithoutConfirmTest" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithoutConfirmTestSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleWithoutConfirmTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSaleResult" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSaleResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResultMPAYSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSaleResultMPAY" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResultMPAYSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSaleResultMPAYResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResult2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetSaleResult2" />
+  </wsdl:message>
+  <wsdl:message name="GetSaleResult2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetSaleResult2Response" />
+  </wsdl:message>
+  <wsdl:message name="QueryMicroPaymentsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMicroPayments" />
+  </wsdl:message>
+  <wsdl:message name="QueryMicroPaymentsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMicroPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleWithTicket" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleWithTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithTicketMPSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleWithTicketMP" />
+  </wsdl:message>
+  <wsdl:message name="SaleWithTicketMPSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleWithTicketMPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelTicket" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTicket" />
+  </wsdl:message>
+  <wsdl:message name="CheckTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBokuPricePoints" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBokuPricePointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditCardProxySoapIn">
+    <wsdl:part name="parameters" element="tns:CreditCardProxy" />
+  </wsdl:message>
+  <wsdl:message name="CreditCardProxySoapOut">
+    <wsdl:part name="parameters" element="tns:CreditCardProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartSaleWithOtpSoapIn">
+    <wsdl:part name="parameters" element="tns:StartSaleWithOtp" />
+  </wsdl:message>
+  <wsdl:message name="StartSaleWithOtpSoapOut">
+    <wsdl:part name="parameters" element="tns:StartSaleWithOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResumeSaleWithOtpSoapIn">
+    <wsdl:part name="parameters" element="tns:ResumeSaleWithOtp" />
+  </wsdl:message>
+  <wsdl:message name="ResumeSaleWithOtpSoapOut">
+    <wsdl:part name="parameters" element="tns:ResumeSaleWithOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketForMsisdnForwardingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTicketForMsisdnForwarding" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketForMsisdnForwardingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTicketForMsisdnForwardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartSubscriptionWithTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:StartSubscriptionWithToken" />
+  </wsdl:message>
+  <wsdl:message name="StartSubscriptionWithTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:StartSubscriptionWithTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsHttpGetIn">
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsHttpPostIn">
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBokuPricePointsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SaleServiceSoap">
+    <wsdl:operation name="SaleWithConfirm">
+      <wsdl:input message="tns:SaleWithConfirmSoapIn" />
+      <wsdl:output message="tns:SaleWithConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirm">
+      <wsdl:input message="tns:SaleWithoutConfirmSoapIn" />
+      <wsdl:output message="tns:SaleWithoutConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirmTest">
+      <wsdl:input message="tns:SaleWithoutConfirmTestSoapIn" />
+      <wsdl:output message="tns:SaleWithoutConfirmTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult">
+      <wsdl:input message="tns:GetSaleResultSoapIn" />
+      <wsdl:output message="tns:GetSaleResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResultMPAY">
+      <wsdl:input message="tns:GetSaleResultMPAYSoapIn" />
+      <wsdl:output message="tns:GetSaleResultMPAYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult2">
+      <wsdl:input message="tns:GetSaleResult2SoapIn" />
+      <wsdl:output message="tns:GetSaleResult2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMicroPayments">
+      <wsdl:input message="tns:QueryMicroPaymentsSoapIn" />
+      <wsdl:output message="tns:QueryMicroPaymentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicket">
+      <wsdl:input message="tns:SaleWithTicketSoapIn" />
+      <wsdl:output message="tns:SaleWithTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicketMP">
+      <wsdl:input message="tns:SaleWithTicketMPSoapIn" />
+      <wsdl:output message="tns:SaleWithTicketMPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicket">
+      <wsdl:input message="tns:CancelTicketSoapIn" />
+      <wsdl:output message="tns:CancelTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTicket">
+      <wsdl:input message="tns:CheckTicketSoapIn" />
+      <wsdl:output message="tns:CheckTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBokuPricePoints">
+      <wsdl:input message="tns:GetBokuPricePointsSoapIn" />
+      <wsdl:output message="tns:GetBokuPricePointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardProxy">
+      <wsdl:input message="tns:CreditCardProxySoapIn" />
+      <wsdl:output message="tns:CreditCardProxySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSaleWithOtp">
+      <wsdl:input message="tns:StartSaleWithOtpSoapIn" />
+      <wsdl:output message="tns:StartSaleWithOtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResumeSaleWithOtp">
+      <wsdl:input message="tns:ResumeSaleWithOtpSoapIn" />
+      <wsdl:output message="tns:ResumeSaleWithOtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketForMsisdnForwarding">
+      <wsdl:input message="tns:CreateTicketForMsisdnForwardingSoapIn" />
+      <wsdl:output message="tns:CreateTicketForMsisdnForwardingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSubscriptionWithToken">
+      <wsdl:input message="tns:StartSubscriptionWithTokenSoapIn" />
+      <wsdl:output message="tns:StartSubscriptionWithTokenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SaleServiceHttpGet">
+    <wsdl:operation name="GetBokuPricePoints">
+      <wsdl:input message="tns:GetBokuPricePointsHttpGetIn" />
+      <wsdl:output message="tns:GetBokuPricePointsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SaleServiceHttpPost">
+    <wsdl:operation name="GetBokuPricePoints">
+      <wsdl:input message="tns:GetBokuPricePointsHttpPostIn" />
+      <wsdl:output message="tns:GetBokuPricePointsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SaleServiceSoap" type="tns:SaleServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaleWithConfirm">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SaleWithConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirm">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SaleWithoutConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirmTest">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SaleWithoutConfirmTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResultMPAY">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResultMPAY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult2">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResult2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMicroPayments">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/QueryMicroPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicket">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SaleWithTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicketMP">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SaleWithTicketMP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicket">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/CancelTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTicket">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/CheckTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBokuPricePoints">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/GetBokuPricePoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardProxy">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/CreditCardProxy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSaleWithOtp">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/StartSaleWithOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResumeSaleWithOtp">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/ResumeSaleWithOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketForMsisdnForwarding">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/CreateTicketForMsisdnForwarding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSubscriptionWithToken">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/StartSubscriptionWithToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SaleServiceSoap12" type="tns:SaleServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaleWithConfirm">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SaleWithConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirm">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SaleWithoutConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithoutConfirmTest">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SaleWithoutConfirmTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResultMPAY">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResultMPAY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleResult2">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/GetSaleResult2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMicroPayments">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/QueryMicroPayments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicket">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SaleWithTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleWithTicketMP">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SaleWithTicketMP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicket">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/CancelTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTicket">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/CheckTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBokuPricePoints">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/GetBokuPricePoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardProxy">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/CreditCardProxy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSaleWithOtp">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/StartSaleWithOtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResumeSaleWithOtp">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/ResumeSaleWithOtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketForMsisdnForwarding">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/CreateTicketForMsisdnForwarding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSubscriptionWithToken">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/StartSubscriptionWithToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SaleServiceHttpGet" type="tns:SaleServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetBokuPricePoints">
+      <http:operation location="/GetBokuPricePoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SaleServiceHttpPost" type="tns:SaleServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetBokuPricePoints">
+      <http:operation location="/GetBokuPricePoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SaleService">
+    <wsdl:port name="SaleServiceSoap" binding="tns:SaleServiceSoap">
+      <soap:address location="https://www.wirecard.com.tr/services/saleservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SaleServiceSoap12" binding="tns:SaleServiceSoap12">
+      <soap12:address location="https://www.wirecard.com.tr/services/saleservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SaleServiceHttpGet" binding="tns:SaleServiceHttpGet">
+      <http:address location="https://www.wirecard.com.tr/services/saleservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SaleServiceHttpPost" binding="tns:SaleServiceHttpPost">
+      <http:address location="https://www.wirecard.com.tr/services/saleservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

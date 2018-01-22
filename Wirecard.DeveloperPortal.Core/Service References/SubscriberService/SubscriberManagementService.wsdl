@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.wirecard.com.tr/services/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.wirecard.com.tr/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.wirecard.com.tr/services/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="DeactivateSubscriber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="subscriberId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MAuthToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeactivateSubscriberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeactivateSubscriberResult" type="tns:MOperationOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MOperationOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteSubscriber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="subscriberId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSubscriberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteSubscriberResult" type="tns:MOperationOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSubscriber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:MSelectSubscriberInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSelectSubscriberInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSM" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDateMin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDateMax" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSuccessfulPaymentDateMin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSuccessfulPaymentDateMax" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectSubscriberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectSubscriberResult" type="tns:MSelectSubscriberOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSelectSubscriberOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subscribers" type="tns:ArrayOfMSubscriber" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMSubscriber">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Subscriber" nillable="true" type="tns:MSubscriber" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSubscriber">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSM" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseUnitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSuccessfulPaymentDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelKeyword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectSubscriberDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="subscriberId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSubscriberDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectSubscriberDetailResult" type="tns:MSubscriberDetailOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MSubscriberDetailOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subscriber" type="tns:MSubscriberDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSubscriberDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSM" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseUnitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderChannelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSuccessfulPaymentDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GsmOperator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelKeyword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Payments" type="tns:ArrayOfMSubscriberPayment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMSubscriberPayment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:MSubscriberPayment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MSubscriberPayment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPaid" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderObjectId" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateSubscriberPriceByIdandDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:MAuthToken" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceSubscriberId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="validFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="newPrice" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSubscriberPriceByIdandDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSubscriberPriceByIdandDateResult" type="tns:MResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DeactivateSubscriberSoapIn">
+    <wsdl:part name="parameters" element="tns:DeactivateSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateSubscriberSoapOut">
+    <wsdl:part name="parameters" element="tns:DeactivateSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSubscriberSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSubscriberSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSubscriberSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="SelectSubscriberSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSubscriberDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectSubscriberDetail" />
+  </wsdl:message>
+  <wsdl:message name="SelectSubscriberDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectSubscriberDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubscriberPriceByIdandDateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSubscriberPriceByIdandDate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubscriberPriceByIdandDateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSubscriberPriceByIdandDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SubscriberManagementServiceSoap">
+    <wsdl:operation name="DeactivateSubscriber">
+      <wsdl:input message="tns:DeactivateSubscriberSoapIn" />
+      <wsdl:output message="tns:DeactivateSubscriberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubscriber">
+      <wsdl:input message="tns:DeleteSubscriberSoapIn" />
+      <wsdl:output message="tns:DeleteSubscriberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriber">
+      <wsdl:input message="tns:SelectSubscriberSoapIn" />
+      <wsdl:output message="tns:SelectSubscriberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriberDetail">
+      <wsdl:input message="tns:SelectSubscriberDetailSoapIn" />
+      <wsdl:output message="tns:SelectSubscriberDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubscriberPriceByIdandDate">
+      <wsdl:input message="tns:UpdateSubscriberPriceByIdandDateSoapIn" />
+      <wsdl:output message="tns:UpdateSubscriberPriceByIdandDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SubscriberManagementServiceHttpGet" />
+  <wsdl:portType name="SubscriberManagementServiceHttpPost" />
+  <wsdl:binding name="SubscriberManagementServiceSoap" type="tns:SubscriberManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeactivateSubscriber">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/DeactivateSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubscriber">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/DeleteSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriber">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriberDetail">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriberDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubscriberPriceByIdandDate">
+      <soap:operation soapAction="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SubscriberManagementServiceSoap12" type="tns:SubscriberManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeactivateSubscriber">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/DeactivateSubscriber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubscriber">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/DeleteSubscriber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriber">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubscriberDetail">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriberDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubscriberPriceByIdandDate">
+      <soap12:operation soapAction="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SubscriberManagementServiceHttpGet" type="tns:SubscriberManagementServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="SubscriberManagementServiceHttpPost" type="tns:SubscriberManagementServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="SubscriberManagementService">
+    <wsdl:port name="SubscriberManagementServiceSoap" binding="tns:SubscriberManagementServiceSoap">
+      <soap:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SubscriberManagementServiceSoap12" binding="tns:SubscriberManagementServiceSoap12">
+      <soap12:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SubscriberManagementServiceHttpGet" binding="tns:SubscriberManagementServiceHttpGet">
+      <http:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SubscriberManagementServiceHttpPost" binding="tns:SubscriberManagementServiceHttpPost">
+      <http:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
