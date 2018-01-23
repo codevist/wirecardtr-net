@@ -9,7 +9,10 @@ using System.Xml.Serialization;
 namespace Wirecard.DeveloperPortal.Core.Entity
 {
 
-
+    /// <summary>
+    /// Pazaryeri 3D secure ve 3d secure olmadan ödeme yapabilmek için
+    /// ve Ödeme formu ödeme işleminin başlatılması için gerekli olan kredi kartı bilgilerinin bulunduğu sınıf
+    /// </summary>
     public class CreditCardInfo
     {
         [XmlElement("CreditCardNo")]

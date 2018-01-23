@@ -7,6 +7,10 @@ using System.Xml.Serialization;
 
 namespace Wirecard.DeveloperPortal.Core.Entity
 {
+
+    /// <summary>
+    /// Pazaryeri oluşturmak ve güncellemek için kullanılan Contact info bilgilerini temsil eden sınıf.
+    /// </summary>
     public class ContactInfo
     {
         [XmlElement("Country")]

@@ -37,6 +37,13 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// Formdan gelen paymentTypeId ve productCategoryId değerleriyle ProApi servis çağrısı başlatılır.
+        /// servis çağrısı sonucunda oluşan redirecturl adresine kullanıcı otomatik olarak yönlendirilir.
+        /// </summary>
+        /// <param name="paymentTypeId"></param>
+        /// <param name="productCategoryId"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult ProApi(int paymentTypeId,int productCategoryId)
         {
@@ -87,7 +94,14 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             return View();
         }
 
-  
+        /// <summary>
+        /// Formdan gelen değerlerle ApiPlus soap servis çağrısı başlatılır.
+        /// Soap response xml mesajı ekranda gösterilir. 
+        /// </summary>
+        /// <param name="gsmNumber"></param>
+        /// <param name="paymentTypeId"></param>
+        /// <param name="productCategoryId"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult ApiPlus(string gsmNumber, int paymentTypeId,int productCategoryId)
         {
@@ -252,6 +266,17 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Ödeme formu, web sayfasından gelen bilgilerle birlikte başlatılır.
+        /// Response cevabı sonucu oluşan xml cevabı ekranda gösterilir.
+        /// </summary>
+        /// <param name="creditCardNo"></param>
+        /// <param name="ownerName"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="cvv"></param>
+        /// <param name="installmentCount"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult CCProxySale(string creditCardNo,string ownerName, int expireYear, int expireMonth,string cvv,int installmentCount)
         {
@@ -259,7 +284,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.ServiceType = "CCProxy";
             request.OperationType = "Sale";
             request.MPAY = "001";
-            request.IPAddress = "140.127.134.33";
+            request.IPAddress = "127.0.0.1";
             request.PaymentContent = "Bilgisayar";
             request.InstallmentCount = installmentCount;
             request.Description = "Bilgisayar Ödemesi";
@@ -383,7 +408,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
 
         /// <summary>
         /// Yeni bir Pazaryeri oluşturulması için kullanılan metoddur.
-        /// Pazaryeri oluşturulduktan sonra response değeri olarak SubPartnerId değeri bize dönderilir.
+        /// Pazaryeri oluşturulduktan sonra response değeri olarak SubPartnerId değeri bize gönderilir.
         /// </summary>
         /// <param name="subPartnerType"></param>
         /// <param name="name"></param>
@@ -522,6 +547,19 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// Pazaryeri 3D secure ile ödeme  servisini başlatmak için parametrelerimizi sınıfımıza ekliyoruz.
+        /// Hazırladığımız sınıfımızı https://www.wirecard.com.tr/SGate/Gate adresine post ediyoruz.
+        /// işlem sonucunda oluşan xml sonucunu ekranda gösteriyoruz.
+        /// </summary>
+        /// <param name="creditCardNo"></param>
+        /// <param name="ownerName"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="cvv"></param>
+        /// <param name="installmentCount"></param>
+        /// <param name="subPartnerId"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult MarketPlaceSale3DSec(string creditCardNo, string ownerName, int expireYear, int expireMonth, string cvv, int installmentCount, int subPartnerId)
         {
@@ -529,7 +567,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.ServiceType = "CCMarketPlace";
             request.OperationType = "Sale3DSEC";
             request.MPAY = "";
-            request.IPAddress = "140.127.134.33";
+            request.IPAddress = "127.0.0.1";
             request.Port = "123";
             request.Description = "Bilgisayar";
             request.InstallmentCount = installmentCount;
@@ -566,7 +604,19 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        // Pazaryeri 3D secure olmadan ödeme  servisini başlatmak için parametrelerimizi sınıfımıza ekliyoruz.
+        /// Hazırladığımız sınıfımızı https://www.wirecard.com.tr/SGate/Gate adresine post ediyoruz.
+        /// işlem sonucunda oluşan xml sonucunu ekranda gösteriyoruz.
+        /// </summary>
+        /// <param name="creditCardNo"></param>
+        /// <param name="ownerName"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="cvv"></param>
+        /// <param name="installmentCount"></param>
+        /// <param name="subPartnerId"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult MarketPlaceMPSale(string creditCardNo, string ownerName, int expireYear, int expireMonth, string cvv, int installmentCount,int subPartnerId)
         {
@@ -574,7 +624,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.ServiceType = "CCMarketPlace";
             request.OperationType = "MPSale";
             request.MPAY = "";
-            request.IPAddress = "140.127.134.33";
+            request.IPAddress = "127.0.0.1";
             request.Port = "123";
             request.Description = "Bilgisayar";
             request.InstallmentCount = installmentCount;
@@ -612,7 +662,13 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// Pazaryeri Ödeme Onay servisi için subpartnerId bilgimizi web sayfasından alıyoruz.
+        /// Hazırladığımız sınıfımızı https://www.wirecard.com.tr/SGate/Gate adresine post ediyoruz.
+        /// Servis cevabını ekranda gösteriyoruz.
+        /// </summary>
+        /// <param name="subPartnerId"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult MarketPlaceReleasePayment(int subPartnerId)
         {

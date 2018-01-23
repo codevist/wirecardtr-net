@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 namespace Wirecard.DeveloperPortal.Core.Entity
 {
+    /// <summary>
+    /// Pazaryeri oluşturma ve güncelleme için gerekli olan Financal info bilgilerinin bulunduğu sınıfı temsil eder.
+    /// </summary>
     public class FinancialInfo
     {
         [XmlElement("IdentityNumber")]

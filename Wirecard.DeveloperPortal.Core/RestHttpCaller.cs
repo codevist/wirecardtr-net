@@ -8,8 +8,7 @@ using Newtonsoft.Json;
 namespace Wirecard.DeveloperPortal.Core
 {
     /// <summary>
-    /// JSON ve XML'leri verilen adreslere post eden sınıftır. Verilen Response sınıfına göre geri dönüş yapar, 
-    /// aynen kopyalanarak kullanılabilir
+    ///XML çağrıları için oluşturulan xml'i verilen adrese post eden sınıftır. Response sonucu oluşan xml çıktısı execute metoduna gönderilir.
     /// </summary>
     public class RestHttpCaller
     {
@@ -18,14 +17,7 @@ namespace Wirecard.DeveloperPortal.Core
             return new RestHttpCaller();
         }
 
-       
-        public T GetXML<T>(String url)
-        {
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage httpResponseMessage = httpClient.GetAsync(url).Result;
-
-            return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
-        }
+        
         public string PostXMLString(String url, object request)
         {
             HttpClient httpClient = new HttpClient();

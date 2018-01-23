@@ -9,6 +9,10 @@ using Wirecard.DeveloperPortal.Core.Response;
 
 namespace Wirecard.DeveloperPortal.Core.Request
 {
+    /// <summary>
+    /// Ortak ödeme formu 3d secure ve 3d secure olmadan ödeme servis çağrısının başlatılması için gerekli olan alanların bulunduğu sınıftır.
+    /// Bu sınıf içerisinde Execute metodunda parametre olarak gönderilen MarketPlaceDeactiveRequest sınıfı verileri xml formatına çevrilerek settings sınıfı içerisinde bulunan url adresine post edilir.
+    /// </summary>
     [XmlRoot("WIRECARD")]
     public class WDTicketPaymentFormRequest
     {
