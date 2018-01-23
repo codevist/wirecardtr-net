@@ -375,10 +375,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="SubscriberManagementServiceSoap" contract="SubscriberService.SubscriberManagementServiceSoap" bindingType="basicHttpBinding" address="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" bindingConfiguration="SubscriberManagementServiceSoap">
+    <endpoint name="SubscriberManagementServiceSoap" contract="SubscriberService.SubscriberManagementServiceSoap" bindingType="basicHttpBinding" address="https://www.3pay.com/services/SubscriberManagementService.asmx" bindingConfiguration="SubscriberManagementServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://www.wirecard.com.tr/services/SubscriberManagementService.asmx</serializedValue>
+          <serializedValue>https://www.3pay.com/services/SubscriberManagementService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -460,10 +460,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SubscriberManagementServiceSoap12" contract="SubscriberService.SubscriberManagementServiceSoap" bindingType="customBinding" address="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" bindingConfiguration="SubscriberManagementServiceSoap12">
+    <endpoint name="SubscriberManagementServiceSoap12" contract="SubscriberService.SubscriberManagementServiceSoap" bindingType="customBinding" address="https://www.3pay.com/services/SubscriberManagementService.asmx" bindingConfiguration="SubscriberManagementServiceSoap12">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://www.wirecard.com.tr/services/SubscriberManagementService.asmx</serializedValue>
+          <serializedValue>https://www.3pay.com/services/SubscriberManagementService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -100,6 +100,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ApiPlusAndProApiService\saleservice.wsdl" />
     <None Include="Service References\ApiPlusAndProApiService\Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MQueryOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -124,14 +125,14 @@
     <None Include="Service References\ApiPlusAndProApiService\Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.TicketOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ApiPlusAndProApiService\saleservice.wsdl" />
+    <None Include="Service References\SendInformationSMSService\msendsmsservice.wsdl" />
     <None Include="Service References\SendInformationSMSService\Wirecard.DeveloperPortal.Core.SendInformationSMSService.MSendSMSOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SendInformationSMSService\Wirecard.DeveloperPortal.Core.SendInformationSMSService.SendSMSResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SendInformationSMSService\msendsmsservice.wsdl" />
+    <None Include="Service References\SubscriberService\SubscriberManagementService.wsdl" />
     <None Include="Service References\SubscriberService\Wirecard.DeveloperPortal.Core.SubscriberService.MOperationOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -144,7 +145,6 @@
     <None Include="Service References\SubscriberService\Wirecard.DeveloperPortal.Core.SubscriberService.MSubscriberDetailOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SubscriberService\SubscriberManagementService.wsdl" />
     <None Include="Web References\ApiService\MQueryOutput.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -177,6 +177,22 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://www.3pay.com/services/saleservice.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ApiService\</RelPath>
+      <UpdateFromURL>https://www.3pay.com/services/saleservice.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>codevist_Wirecard_DeveloperPortal_Core_ApiService_SaleService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ApiPlusAndProApiService\" />
@@ -224,22 +240,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="https://www.3pay.com/services/saleservice.asmx%3fwsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ApiService\</RelPath>
-      <UpdateFromURL>https://www.3pay.com/services/saleservice.asmx%3fwsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>codevist_Wirecard_DeveloperPortal_Core_ApiService_SaleService</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

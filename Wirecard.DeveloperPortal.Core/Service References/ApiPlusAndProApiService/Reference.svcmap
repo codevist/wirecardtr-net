@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="74cf1211-d0c3-4452-a8de-aa3746375488" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69ad2359-343b-4b12-b83c-145815afd8e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://www.wirecard.com.tr/services/saleservice.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="saleservice.disco" MetadataType="Disco" ID="eda26a6b-80c9-495c-85fa-ec1463665eab" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/saleservice.asmx?disco" />
-    <MetadataFile FileName="saleservice.wsdl" MetadataType="Wsdl" ID="fac5eb65-b5a5-4515-9754-11cda5b5b429" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/saleservice.asmx?wsdl" />
+    <MetadataFile FileName="saleservice.wsdl" MetadataType="Wsdl" ID="66ad28ad-f04f-43be-aeb0-32e5e7c41413" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/saleservice.asmx?wsdl" />
+    <MetadataFile FileName="saleservice.disco" MetadataType="Disco" ID="5b4be7a4-65ca-46d5-bc18-adfc46ff3d2f" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/saleservice.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.wirecard.com.tr/services/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.wirecard.com.tr/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.3pay.com/services/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.3pay.com/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://www.wirecard.com.tr/services/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.3pay.com/services/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
       <s:element name="DeactivateSubscriber">
         <s:complexType>
@@ -250,7 +250,7 @@
   <wsdl:binding name="SubscriberManagementServiceSoap" type="tns:SubscriberManagementServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DeactivateSubscriber">
-      <soap:operation soapAction="http://www.wirecard.com.tr/services/DeactivateSubscriber" style="document" />
+      <soap:operation soapAction="http://www.3pay.com/services/DeactivateSubscriber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -259,7 +259,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteSubscriber">
-      <soap:operation soapAction="http://www.wirecard.com.tr/services/DeleteSubscriber" style="document" />
+      <soap:operation soapAction="http://www.3pay.com/services/DeleteSubscriber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -268,7 +268,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SelectSubscriber">
-      <soap:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriber" style="document" />
+      <soap:operation soapAction="http://www.3pay.com/services/SelectSubscriber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -277,7 +277,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SelectSubscriberDetail">
-      <soap:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriberDetail" style="document" />
+      <soap:operation soapAction="http://www.3pay.com/services/SelectSubscriberDetail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -286,7 +286,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateSubscriberPriceByIdandDate">
-      <soap:operation soapAction="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate" style="document" />
+      <soap:operation soapAction="http://www.3pay.com/services/UpdateSubscriberPriceByIdandDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -298,7 +298,7 @@
   <wsdl:binding name="SubscriberManagementServiceSoap12" type="tns:SubscriberManagementServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DeactivateSubscriber">
-      <soap12:operation soapAction="http://www.wirecard.com.tr/services/DeactivateSubscriber" style="document" />
+      <soap12:operation soapAction="http://www.3pay.com/services/DeactivateSubscriber" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -307,7 +307,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteSubscriber">
-      <soap12:operation soapAction="http://www.wirecard.com.tr/services/DeleteSubscriber" style="document" />
+      <soap12:operation soapAction="http://www.3pay.com/services/DeleteSubscriber" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -316,7 +316,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SelectSubscriber">
-      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriber" style="document" />
+      <soap12:operation soapAction="http://www.3pay.com/services/SelectSubscriber" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -325,7 +325,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SelectSubscriberDetail">
-      <soap12:operation soapAction="http://www.wirecard.com.tr/services/SelectSubscriberDetail" style="document" />
+      <soap12:operation soapAction="http://www.3pay.com/services/SelectSubscriberDetail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -334,7 +334,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateSubscriberPriceByIdandDate">
-      <soap12:operation soapAction="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate" style="document" />
+      <soap12:operation soapAction="http://www.3pay.com/services/UpdateSubscriberPriceByIdandDate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -351,16 +351,16 @@
   </wsdl:binding>
   <wsdl:service name="SubscriberManagementService">
     <wsdl:port name="SubscriberManagementServiceSoap" binding="tns:SubscriberManagementServiceSoap">
-      <soap:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+      <soap:address location="https://www.3pay.com/services/SubscriberManagementService.asmx" />
     </wsdl:port>
     <wsdl:port name="SubscriberManagementServiceSoap12" binding="tns:SubscriberManagementServiceSoap12">
-      <soap12:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+      <soap12:address location="https://www.3pay.com/services/SubscriberManagementService.asmx" />
     </wsdl:port>
     <wsdl:port name="SubscriberManagementServiceHttpGet" binding="tns:SubscriberManagementServiceHttpGet">
-      <http:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+      <http:address location="https://www.3pay.com/services/SubscriberManagementService.asmx" />
     </wsdl:port>
     <wsdl:port name="SubscriberManagementServiceHttpPost" binding="tns:SubscriberManagementServiceHttpPost">
-      <http:address location="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" />
+      <http:address location="https://www.3pay.com/services/SubscriberManagementService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

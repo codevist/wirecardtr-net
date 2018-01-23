@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx?wsdl" docRef="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" xmlns:q1="http://www.wirecard.com.tr/services/" binding="q1:SubscriberManagementServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx" xmlns:q2="http://www.wirecard.com.tr/services/" binding="q2:SubscriberManagementServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <contractRef ref="https://www.3pay.com/services/SubscriberManagementService.asmx?wsdl" docRef="https://www.3pay.com/services/SubscriberManagementService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://www.3pay.com/services/SubscriberManagementService.asmx" xmlns:q1="http://www.3pay.com/services/" binding="q1:SubscriberManagementServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://www.3pay.com/services/SubscriberManagementService.asmx" xmlns:q2="http://www.3pay.com/services/" binding="q2:SubscriberManagementServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
 </discovery>

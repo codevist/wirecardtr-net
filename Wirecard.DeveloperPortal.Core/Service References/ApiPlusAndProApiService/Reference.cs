@@ -12,143 +12,143 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.wirecard.com.tr/services/", ConfigurationName="ApiPlusAndProApiService.SaleServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.3pay.com/services/", ConfigurationName="ApiPlusAndProApiService.SaleServiceSoap")]
     public interface SaleServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithConfirm", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithConfirm", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput SaleWithConfirm(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithConfirm", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithConfirm", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> SaleWithConfirmAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithoutConfirm", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithoutConfirm", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput SaleWithoutConfirm(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithoutConfirm", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithoutConfirm", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> SaleWithoutConfirmAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithoutConfirmTest", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithoutConfirmTest", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput SaleWithoutConfirmTest(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithoutConfirmTest", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithoutConfirmTest", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> SaleWithoutConfirmTestAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResult", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResult", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput GetSaleResult(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResult", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResult", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> GetSaleResultAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResultMPAY", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResultMPAY", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput GetSaleResultMPAY(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, string MPAY);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResultMPAY", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResultMPAY", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> GetSaleResultMPAYAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, string MPAY);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResult2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResult2", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleResult GetSaleResult2(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetSaleResult2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetSaleResult2", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleResult> GetSaleResult2Async(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/QueryMicroPayments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/QueryMicroPayments", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MQueryOutput QueryMicroPayments(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MQueryInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/QueryMicroPayments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/QueryMicroPayments", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MQueryOutput> QueryMicroPaymentsAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MQueryInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithTicket", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketOutput SaleWithTicket(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithTicket", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketOutput> SaleWithTicketAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithTicketMP", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithTicketMP", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketOutput SaleWithTicketMP(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketInputExtended input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SaleWithTicketMP", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SaleWithTicketMP", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketOutput> SaleWithTicketMPAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleTicketInputExtended input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CancelTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CancelTicket", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MResult CancelTicket(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid ticketObjectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CancelTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CancelTicket", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MResult> CancelTicketAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid ticketObjectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CheckTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CheckTicket", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MResult CheckTicket(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid ticketObjectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CheckTicket", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CheckTicket", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MResult> CheckTicketAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid ticketObjectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetBokuPricePoints", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetBokuPricePoints", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         string GetBokuPricePoints(string country);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/GetBokuPricePoints", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/GetBokuPricePoints", ReplyAction="*")]
         System.Threading.Tasks.Task<string> GetBokuPricePointsAsync(string country);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CreditCardProxy", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CreditCardProxy", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput1 CreditCardProxy(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken1 token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.CreditCardProxyInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CreditCardProxy", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CreditCardProxy", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput1> CreditCardProxyAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken1 token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.CreditCardProxyInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/StartSaleWithOtp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/StartSaleWithOtp", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput StartSaleWithOtp(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/StartSaleWithOtp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/StartSaleWithOtp", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> StartSaleWithOtpAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/ResumeSaleWithOtp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/ResumeSaleWithOtp", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput ResumeSaleWithOtp(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId, string otp);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/ResumeSaleWithOtp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/ResumeSaleWithOtp", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput> ResumeSaleWithOtpAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, System.Guid orderId, string otp);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CreateTicketForMsisdnForwarding", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CreateTicketForMsisdnForwarding", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.TicketOutput CreateTicketForMsisdnForwarding(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, string redirectUrl);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/CreateTicketForMsisdnForwarding", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/CreateTicketForMsisdnForwarding", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.TicketOutput> CreateTicketForMsisdnForwardingAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, string redirectUrl);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/StartSubscriptionWithToken", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/StartSubscriptionWithToken", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MSaleInput1))]
         Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutputCreditCard StartSubscriptionWithToken(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MTokenSaleInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/StartSubscriptionWithToken", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/StartSubscriptionWithToken", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutputCreditCard> StartSubscriptionWithTokenAsync(Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MAuthToken token, Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MTokenSaleInput input);
     }
     
@@ -157,7 +157,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MAuthToken : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string userCodeField;
@@ -203,7 +203,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MTokenSaleInput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid tokenIdField;
@@ -305,7 +305,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleProduct : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int productIdField;
@@ -1184,7 +1184,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;
@@ -1244,7 +1244,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class TicketOutput : MResult {
         
         private string redirectUrlField;
@@ -1267,7 +1267,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleTicketOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid ticketObjectIdField;
@@ -1370,7 +1370,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleTicketInput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string mPAYField;
@@ -1640,7 +1640,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleTicketInputExtended : MSaleTicketInput {
         
         private string msisdnField;
@@ -1663,7 +1663,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class QueryResultItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid orderObjectIdField;
@@ -1905,7 +1905,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MQueryOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;
@@ -1979,7 +1979,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MQueryInput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string gsmField;
@@ -2039,7 +2039,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid orderObjectIdField;
@@ -2295,7 +2295,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MMicroPaymentOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid paymentObjectIdField;
@@ -2384,7 +2384,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid orderObjectIdField;
@@ -2612,7 +2612,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleOutputCreditCard : MSaleOutput {
         
         private double basePriceField;
@@ -2733,7 +2733,7 @@ namespace Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSaleInput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string mPAYField;

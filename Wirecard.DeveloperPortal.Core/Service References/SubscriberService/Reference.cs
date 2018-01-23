@@ -12,42 +12,42 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.wirecard.com.tr/services/", ConfigurationName="SubscriberService.SubscriberManagementServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.3pay.com/services/", ConfigurationName="SubscriberService.SubscriberManagementServiceSoap")]
     public interface SubscriberManagementServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/DeactivateSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/DeactivateSubscriber", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Wirecard.DeveloperPortal.Core.SubscriberService.MOperationOutput DeactivateSubscriber(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/DeactivateSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/DeactivateSubscriber", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.SubscriberService.MOperationOutput> DeactivateSubscriberAsync(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/DeleteSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/DeleteSubscriber", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Wirecard.DeveloperPortal.Core.SubscriberService.MOperationOutput DeleteSubscriber(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/DeleteSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/DeleteSubscriber", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.SubscriberService.MOperationOutput> DeleteSubscriberAsync(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SelectSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SelectSubscriber", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Wirecard.DeveloperPortal.Core.SubscriberService.MSelectSubscriberOutput SelectSubscriber(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, Wirecard.DeveloperPortal.Core.SubscriberService.MSelectSubscriberInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SelectSubscriber", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SelectSubscriber", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.SubscriberService.MSelectSubscriberOutput> SelectSubscriberAsync(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, Wirecard.DeveloperPortal.Core.SubscriberService.MSelectSubscriberInput input);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SelectSubscriberDetail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SelectSubscriberDetail", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Wirecard.DeveloperPortal.Core.SubscriberService.MSubscriberDetailOutput SelectSubscriberDetail(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/SelectSubscriberDetail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/SelectSubscriberDetail", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.SubscriberService.MSubscriberDetailOutput> SelectSubscriberDetailAsync(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid subscriberId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/UpdateSubscriberPriceByIdandDate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Wirecard.DeveloperPortal.Core.SubscriberService.MResult UpdateSubscriberPriceByIdandDate(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid serviceSubscriberId, System.DateTime validFrom, double newPrice, string description);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.wirecard.com.tr/services/UpdateSubscriberPriceByIdandDate", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.3pay.com/services/UpdateSubscriberPriceByIdandDate", ReplyAction="*")]
         System.Threading.Tasks.Task<Wirecard.DeveloperPortal.Core.SubscriberService.MResult> UpdateSubscriberPriceByIdandDateAsync(Wirecard.DeveloperPortal.Core.SubscriberService.MAuthToken token, System.Guid serviceSubscriberId, System.DateTime validFrom, double newPrice, string description);
     }
     
@@ -56,7 +56,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MAuthToken : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string userCodeField;
@@ -102,7 +102,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;
@@ -162,7 +162,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSubscriberPayment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.DateTime paymentDateField;
@@ -222,7 +222,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSubscriberDetail : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid subscriberIdField;
@@ -451,7 +451,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSubscriberDetailOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;
@@ -525,7 +525,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSubscriber : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid subscriberIdField;
@@ -739,7 +739,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSelectSubscriberOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;
@@ -814,7 +814,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MSelectSubscriberInput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int productIdField;
@@ -958,7 +958,7 @@ namespace Wirecard.DeveloperPortal.Core.SubscriberService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.wirecard.com.tr/services/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.3pay.com/services/")]
     public partial class MOperationOutput : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int statusCodeField;

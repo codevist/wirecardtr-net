@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ff25e549-864f-4157-b2ef-6fedbc229433" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c2b76c1d-1cf6-4b8a-9d47-ed89f94cb2ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx " Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://www.3pay.com/services/SubscriberManagementService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SubscriberManagementService.disco" MetadataType="Disco" ID="fb9c3b16-73fa-42da-be0a-0b5cbb270562" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx?disco" />
-    <MetadataFile FileName="SubscriberManagementService.wsdl" MetadataType="Wsdl" ID="981c9a9c-51bb-48b1-9d58-4b5a091df21f" SourceId="1" SourceUrl="https://www.wirecard.com.tr/services/SubscriberManagementService.asmx?wsdl" />
+    <MetadataFile FileName="SubscriberManagementService.disco" MetadataType="Disco" ID="ebc274ec-eb8a-47d3-a6b4-d5c5c022e8e5" SourceId="1" SourceUrl="https://www.3pay.com/services/SubscriberManagementService.asmx?disco" />
+    <MetadataFile FileName="SubscriberManagementService.wsdl" MetadataType="Wsdl" ID="eebd5849-f275-42fa-8057-0a3ef85becb3" SourceId="1" SourceUrl="https://www.3pay.com/services/SubscriberManagementService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

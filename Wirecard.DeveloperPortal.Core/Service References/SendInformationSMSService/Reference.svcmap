@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fc5b51d1-d205-4a2d-9b37-0d7513b3458e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d41c28d3-ff2c-48e2-8880-63de32d8c4bf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="http://vas.mikro-odeme.com/services/msendsmsservice.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="msendsmsservice.wsdl" MetadataType="Wsdl" ID="50e318c4-b703-466a-8086-078ed4a05888" SourceId="1" SourceUrl="http://vas.mikro-odeme.com/services/msendsmsservice.asmx?WSDL" />
+    <MetadataFile FileName="msendsmsservice.wsdl" MetadataType="Wsdl" ID="7dca4d37-c7c3-4b94-969f-ed25779a1619" SourceId="1" SourceUrl="http://vas.mikro-odeme.com/services/msendsmsservice.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
