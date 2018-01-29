@@ -23,6 +23,9 @@ namespace Wirecard.DeveloperPortal.Core.Request
         public Token Token { get; set; }
         [XmlElement("CreditCardInfo")]
         public CreditCardInfo CreditCardInfo { get; set; }
+
+        [XmlElement("Price")]
+        public int Price { get; set; }
         [XmlElement("MPAY")]
         public string MPAY { get; set; }
         [XmlElement("IPAddress")]
@@ -49,8 +52,8 @@ namespace Wirecard.DeveloperPortal.Core.Request
         [XmlElement("SubPartnerId")]
         public int SubPartnerId { get; set; }
 
-        [XmlElement("CCTokenId")]
-        public Guid CCTokenId { get; set; }
+        [XmlElement("CardTokenization")]
+        public CardTokenization CardTokenization { get; set; }
 
         public static string Execute(MarketPlaceSale3DSecOrMpSaleRequest request,Settings options)
         {

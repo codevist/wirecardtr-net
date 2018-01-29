@@ -623,18 +623,19 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             MarketPlaceSale3DSecOrMpSaleRequest request = new MarketPlaceSale3DSecOrMpSaleRequest();
             request.ServiceType = "CCMarketPlace";
             request.OperationType = "MPSale";
-            request.MPAY = "";
+            request.Price = 1; //0,01 TL
+            request.MPAY = "01";
             request.IPAddress = "127.0.0.1";
             request.Port = "123";
             request.Description = "Bilgisayar";
             request.InstallmentCount = installmentCount;
-            request.CommissionRate = 100; //komisyon oranı 1. 100 ile çarpılıp gönderiliyor
+            request.CommissionRate = 1; //komisyon oranı 1. 100 ile çarpılıp gönderiliyor
             request.ExtraParam = "";
-            request.PaymentContent = "";
+            request.PaymentContent = "BLGSYR01";
             request.SubPartnerId = subPartnerId;
-            request.CCTokenId=Guid.NewGuid();
-            request.ErrorURL = "";
-            request.SuccessURL = "";
+            request.ErrorURL = "http://localhost:7597/Home/Fail";
+            request.SuccessURL = "http://localhost:7597/Home/Success";
+
 
             #region Token
             request.Token= new Token();
@@ -649,7 +650,18 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.CreditCardInfo.ExpireYear = expireYear;
             request.CreditCardInfo.ExpireMonth = expireMonth;
             request.CreditCardInfo.Cvv = cvv;
-            request.CreditCardInfo.Price = 1;//0,01 TL
+            #endregion
+
+
+            #region CardTokenization
+
+            request.CardTokenization= new CardTokenization();
+            request.CardTokenization.RequestType = 0;
+            request.CardTokenization.CustomerId = Guid.NewGuid().ToString();
+            request.CardTokenization.ValidityPeriod = 0;
+            request.CardTokenization.ValidityPeriod = 0;
+            request.CardTokenization.CCTokenId = Guid.NewGuid();
+
             #endregion
 
             var response = MarketPlaceSale3DSecOrMpSaleRequest.Execute(request, settings);
