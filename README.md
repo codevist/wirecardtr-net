@@ -4,7 +4,7 @@ Wirecard Ödeme Sistemleri .Net Örnek Projesi
 ## Kullanım
 Wirecard servislerini kullanabilmek için [Wirecard'a](https://www.wirecard.com.tr) üye olmalısınız. Üye olduktan sonra Wirecard sizinle token bilgileri için UserCode ve Pin keylerini, sms ile ödeme servislerinde kullanılacak olan TurkcellServiceId değerlerini sizinle paylaşacaktır. Paylaşılan bu anahtarları kendi projenizde ilgili yerlere yazarak saklamanız ve kullanmanız gerekmektedir.
 
-* Örnek projelerimizi daha iyi anlamak için [Wirecard geliştirici merkezini](http://dev.wirecard.com.tr) takip etmeniz büyük önem arz etmektedir. 
+* Örnek projelerimizi daha iyi anlamak için [Wirecard geliştirici merkezini](http://developer.wirecard.com.tr) takip etmeniz büyük önem arz etmektedir. 
 
 ## Genel Bilgiler
 Wirecard sunduğu SMS, Kredi kartıyla ödeme alma, pazaryeri ve diğer servisler, dünya standartlarına uygun yapıda web ve mobil cihazlar üzerinden ödeme kabul etmek isteyen tüm üye işyerlerine hitap edecek bir şekilde, oturum bilgisi tutmayan(stateless) yapıda ve servis odaklı bir mimaride geliştirilmiştir.
@@ -62,5 +62,5 @@ Testleriniz sırasında aşağıdaki kart numaralarını ve diğer bilgileri kul
 ## Destek
 
 Entegrasyon sırasında karşılaştığınız ve çözüm bulamadığınız her konuda bizimle iletişime geçebilir; istek, öneri, talep ve her türlü görüşlerinizi bizimle paylaşabilirsiniz. 
-Bizimle iletişime geçmek için **integration@3pay.com** adresine e-posta gönderebilir veya [iletişim Formu](https://dev.wirecard.com.tr) yardımıyla bizlere ulaşabilirsiniz.
+Bizimle iletişime geçmek için **integration@3pay.com** adresine e-posta gönderebilir veya [iletişim Formu](http://developer.wirecard.com.tr/tr/bize-ulasin) yardımıyla bizlere ulaşabilirsiniz.
 
