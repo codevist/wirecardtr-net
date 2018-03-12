@@ -190,6 +190,9 @@
     <Content Include="Views\Home\MarketPlaceMPSale.cshtml" />
     <Content Include="Views\Home\MarketPlaceSale3DSec.cshtml" />
     <Content Include="Views\Home\MarketPlaceReleasePayment.cshtml" />
+    <Content Include="Views\Home\CCProxySale3D.cshtml" />
+    <Content Include="Views\Home\TransactionQueryByOrderId.cshtml" />
+    <Content Include="Views\Home\TransactionQueryByMPAY.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wirecard.DeveloperPortal.Core\Wirecard.DeveloperPortal.Core.csproj">

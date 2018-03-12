@@ -8,12 +8,8 @@ using Wirecard.DeveloperPortal.Core.Entity;
 
 namespace Wirecard.DeveloperPortal.Core.Request
 {
-    /// <summary>
-    /// Ödeme formu Xml servis çağrısının başlatılması için gerekli olan alanların bulunduğu sınıftır.
-    /// Bu sınıf içerisinde Execute metodunda parametre olarak gönderilen CCProxySaleRequest sınıfı verileri xml formatına çevrilerek settings sınıfı içerisinde bulunan url adresine post edilir.
-    /// </summary>
     [XmlRoot("WIRECARD")]
-    public class CCProxySaleRequest
+    public class CCProxySale3DRequest
     {
         [XmlElement("ServiceType")]
         public string ServiceType { get; set; }
@@ -31,17 +27,24 @@ namespace Wirecard.DeveloperPortal.Core.Request
         public string PaymentContent { get; set; }
         [XmlElement("InstallmentCount")]
         public int InstallmentCount { get; set; }
-        [XmlElement("Description")]   
+        [XmlElement("ErrorURL")]
+        public string ErrorURL { get; set; }
+        [XmlElement("SuccessURL")]
+        public string SuccessURL { get; set; }
+        [XmlElement("Description")]
         public string Description { get; set; }
         [XmlElement("Port")]
         public string Port { get; set; }
         [XmlElement("ExtraParam")]
         public string ExtraParam { get; set; }
+     
+
         [XmlElement("CardTokenization")]
         public CardTokenization CardTokenization { get; set; }
 
 
-        public static string Execute(CCProxySaleRequest request, Settings options)
+
+        public static string Execute(CCProxySale3DRequest request, Settings options)
         {
             return RestHttpCaller.Create().PostXMLString(options.BaseUrl, request);
         }

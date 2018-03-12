@@ -1,0 +1,39 @@
+﻿@using System.Xml.Linq
+@using Wirecard.DeveloperPortal.Core
+@using Newtonsoft.Json
+@model Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput
+@{
+    ViewBag.Title = "MPAY ile İşlem Sorgulama";
+}
+<h2>TransactionQueryByMPAY</h2>
+<br />
+<form action="" method="post" class="form-horizontal">
+    <fieldset>
+        <!-- Form Name -->
+        <legend><label style="font-weight:bold;width:250px;">MPAY ile İşlem Sorgulama</label></legend>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="">MPAY:</label>
+            <div class="col-md-4">
+                <input value="001" name="MPAY" class="form-control input-md">
+            </div>
+        </div>
+    </fieldset>
+    <!-- Button -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for=""></label>
+        <div class="col-md-4">
+            <button type="submit" id="" name="" class="btn btn-danger">Sorgula</button>
+        </div>
+    </div>
+</form>
+<label class="col-md-12 control-label" for=""></label>
+<div class="col-md-12">
+    <pre>
+            @if (Model!= null)
+            {
+                string xmlFormatted = XDocument.Parse(XmlBuilder.GetXMLFromObjectWCFService(Model)).ToString();
+                @Html.Raw(Html.Encode(xmlFormatted));
+            }
+        </pre>
+</div>

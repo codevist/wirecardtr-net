@@ -20,6 +20,8 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
     public class HomeController : BaseController
     {
         private SaleServiceSoapClient _proApiApiPlusService;
+        private SaleServiceSoapClient _getSaleResultMpayService;
+        private SaleServiceSoapClient _getSaleResultOrderService;
         private SubscriberManagementServiceSoapClient _subscriberManagementService;
         private MSendSMSServiceSoapClient _sendSmsService;
         
@@ -266,6 +268,67 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             return View();
         }
 
+        public ActionResult CCProxySale3D()
+        {
+            return View();
+        }
+
+
+        /// <summary>
+        /// Ödeme Formu 3D secure ile ödeme yapılması için kullanılacak olan metodu temsil etmektedir.
+        /// </summary>
+        /// <param name="creditCardNo"></param>
+        /// <param name="ownerName"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="cvv"></param>
+        /// <param name="installmentCount"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult CCProxySale3D(string creditCardNo, string ownerName, int expireYear, int expireMonth, string cvv, int installmentCount)
+        {
+            var request = new CCProxySale3DRequest();
+            request.ServiceType = "CCProxy";
+            request.OperationType = "Sale3DSEC";
+            request.MPAY = "001";
+            request.Port = "001";
+            request.IPAddress = "127.0.0.1";
+            request.PaymentContent = "Bilgisayar";
+            request.InstallmentCount = installmentCount;
+            request.Description = "Bilgisayar Ödemesi";
+            request.ExtraParam = "";
+            request.ErrorURL = "http://localhost:7597/Home/Fail";
+            request.SuccessURL = "http://localhost:7597/Home/Success";
+
+            #region Token
+            request.Token = new Token();
+            request.Token.UserCode = settings.UserCode;
+            request.Token.Pin = settings.Pin;
+            #endregion
+
+            #region CreditCardInfo
+            request.CreditCardInfo = new CreditCardInfo();
+            request.CreditCardInfo.CreditCardNo = creditCardNo;
+            request.CreditCardInfo.OwnerName = ownerName;
+            request.CreditCardInfo.ExpireMonth = expireMonth;
+            request.CreditCardInfo.ExpireYear = expireYear;
+            request.CreditCardInfo.Cvv = cvv;
+            request.CreditCardInfo.Price = 1;//0,01 TL
+            #endregion
+            #region CardTokenization
+
+            request.CardTokenization = new CardTokenization();
+            request.CardTokenization.RequestType = 0;
+            request.CardTokenization.CustomerId = Guid.NewGuid().ToString();
+            request.CardTokenization.ValidityPeriod = 0;
+            request.CardTokenization.CCTokenId = Guid.NewGuid();
+
+            #endregion
+            var response = CCProxySale3DRequest.Execute(request, settings);
+            ServicesXmlResponse responseMessage = new ServicesXmlResponse();
+            responseMessage.XmlResponse = response;
+            return View(responseMessage);
+        }
         /// <summary>
         /// Ödeme formu, web sayfasından gelen bilgilerle birlikte başlatılır.
         /// Response cevabı sonucu oluşan xml cevabı ekranda gösterilir.
@@ -284,6 +347,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.ServiceType = "CCProxy";
             request.OperationType = "Sale";
             request.MPAY = "001";
+            request.Port = "001";
             request.IPAddress = "127.0.0.1";
             request.PaymentContent = "Bilgisayar";
             request.InstallmentCount = installmentCount;
@@ -305,7 +369,15 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.CreditCardInfo.Cvv = cvv;
             request.CreditCardInfo.Price = 1;//0,01 TL
             #endregion
+            #region CardTokenization
 
+            request.CardTokenization = new CardTokenization();
+            request.CardTokenization.RequestType = 0;
+            request.CardTokenization.CustomerId = Guid.NewGuid().ToString();
+            request.CardTokenization.ValidityPeriod = 0;
+            request.CardTokenization.CCTokenId = Guid.NewGuid();
+
+            #endregion
             var response = CCProxySaleRequest.Execute(request, settings);
             ServicesXmlResponse responseMessage = new ServicesXmlResponse();
             responseMessage.XmlResponse = response;
@@ -567,7 +639,7 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.ServiceType = "CCMarketPlace";
             request.OperationType = "Sale3DSEC";
             request.MPAY = "";
-            request.IPAddress = "127.0.0.1";
+            request.IPAddress = "195.168.1.4";
             request.Port = "123";
             request.Description = "Bilgisayar";
             request.InstallmentCount = installmentCount;
@@ -584,6 +656,8 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.Token.Pin = settings.Pin;
             #endregion
 
+
+
             #region CreditCardInfo
             request.CreditCardInfo = new CreditCardInfo();
             request.CreditCardInfo.CreditCardNo = creditCardNo;
@@ -592,6 +666,16 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.CreditCardInfo.ExpireMonth = expireMonth;
             request.CreditCardInfo.Cvv = cvv;
             request.CreditCardInfo.Price = 1;//0,01 TL
+            #endregion
+
+            #region CardTokenization
+
+            request.CardTokenization = new CardTokenization();
+            request.CardTokenization.RequestType = 0;
+            request.CardTokenization.CustomerId = Guid.NewGuid().ToString();
+            request.CardTokenization.ValidityPeriod = 0;
+            request.CardTokenization.CCTokenId = Guid.NewGuid();
+
             #endregion
 
             var response = MarketPlaceSale3DSecOrMpSaleRequest.Execute(request, settings);
@@ -651,14 +735,13 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             request.CreditCardInfo.ExpireMonth = expireMonth;
             request.CreditCardInfo.Cvv = cvv;
             #endregion
-
+			
 
             #region CardTokenization
 
             request.CardTokenization= new CardTokenization();
             request.CardTokenization.RequestType = 0;
             request.CardTokenization.CustomerId = Guid.NewGuid().ToString();
-            request.CardTokenization.ValidityPeriod = 0;
             request.CardTokenization.ValidityPeriod = 0;
             request.CardTokenization.CCTokenId = Guid.NewGuid();
 
@@ -705,6 +788,44 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
             responseMessage.XmlResponse = response;
             return View(responseMessage);
         }
+
+
+        public ActionResult TransactionQueryByOrderId()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TransactionQueryByOrderId(string orderId)
+        {
+            _getSaleResultOrderService = new SaleServiceSoapClient();
+            Core.ApiPlusAndProApiService.MAuthToken token = new Core.ApiPlusAndProApiService.MAuthToken();
+            #region Token
+            token.UserCode = base.settings.UserCode;
+            token.Pin = base.settings.Pin;
+            #endregion
+            var guid = new Guid(orderId.ToString());
+            var response = _getSaleResultOrderService.GetSaleResult(token, guid);
+            return View(response);
+        }
+
+        public ActionResult TransactionQueryByMPAY()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TransactionQueryByMPAY(string MPAY)
+        {
+            _getSaleResultMpayService = new SaleServiceSoapClient();
+            Core.ApiPlusAndProApiService.MAuthToken token = new Core.ApiPlusAndProApiService.MAuthToken();
+            #region Token
+            token.UserCode = base.settings.UserCode;
+            token.Pin = base.settings.Pin;
+            #endregion
+            var response = _getSaleResultMpayService.GetSaleResultMPAY(token, MPAY);
+            return View(response);
+        }
+
+
 
         public ActionResult Success()
         {

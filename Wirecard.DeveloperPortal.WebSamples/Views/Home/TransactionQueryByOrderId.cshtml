@@ -1,0 +1,46 @@
+﻿@using System.Xml.Linq
+@using Wirecard.DeveloperPortal.Core
+@using Newtonsoft.Json
+@model Wirecard.DeveloperPortal.Core.ApiPlusAndProApiService.MSaleOutput
+@{
+    ViewBag.Title = "Sipariş Numarası ile İşlem Sorgulama";
+}
+<h2>TransactionQueryByOrderId</h2>
+<br />
+
+<form action="" method="post" class="form-horizontal">
+    <fieldset>
+        <!-- Form Name -->
+        <legend><label style="font-weight:bold;width:250px;">Sipariş Numarası ile İşlem Sorgulama</label></legend>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="">Sipariş Numarası:</label>
+            <div class="col-md-4">
+                <input value="3f5dbb30-8e58-43cd-a928-1c00b822eb82" name="orderId" class="form-control input-md">
+            </div>
+        </div>
+    </fieldset>
+    <!-- Button -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for=""></label>
+        <div class="col-md-4">
+            <button type="submit" id="" name="" class="btn btn-danger">Sorgula</button>
+        </div>
+    </div>
+    <div class="row">
+        <br />
+        <div class="col-md-12">
+            <pre>
+        @if (Model!= null)
+        {
+            string xmlFormatted = XDocument.Parse(XmlBuilder.GetXMLFromObjectWCFService(Model)).ToString();
+            @Html.Raw(Html.Encode(xmlFormatted));
+        }
+         
+        </pre>
+        </div>
+    </div>
+</form>
+
+
+

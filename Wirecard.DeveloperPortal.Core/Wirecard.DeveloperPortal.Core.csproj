@@ -60,6 +60,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Request\CCProxySale3DRequest.cs" />
     <Compile Include="Request\CCProxySaleRequest.cs" />
     <Compile Include="Request\MarketPlaceAddOrUpdateRequest.cs" />
     <Compile Include="Request\MarketPlaceDeactiveRequest.cs" />

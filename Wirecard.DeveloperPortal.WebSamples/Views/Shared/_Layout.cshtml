@@ -37,25 +37,35 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="@Url.Action("CCProxySale","Home")">Ödeme Formu</a>
-                    
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">Ödeme Formu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li><a href="@Url.Action("CCProxySale3D","Home")">3D Secure İle Ödeme</a></li>
+                        <li><a href="@Url.Action("CCProxySale","Home")">3D Secure Olmadan Ödeme</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">Ortak Ödeme Formu</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">Ortak Ödeme Formu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
                         <li><a href="@Url.Action("WDTicketSale3DURLProxy","Home")">3D Secure İle ödeme</a></li>
                         <li><a href="@Url.Action("WDTicketSaleURLProxy","Home")">3D Secure Olmadan Ödeme</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">Mağaza Servisleri</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false">Mağaza Servisleri</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu4">
                         <li><a href="@Url.Action("MarketPlaceAddSubPartner","Home")">Mağaza Oluştur</a></li>
                         <li><a href="@Url.Action("MarketPlaceUpdateSubPartner","Home")">Mağaza Güncelle</a></li>
                         <li><a href="@Url.Action("MarketPlaceDeactiveSubPartner","Home")">Mağaza Sil</a></li>
                         <li><a href="@Url.Action("MarketPlaceSale3DSec","Home")">3D Secure ile Ödeme </a></li>
                         <li><a href="@Url.Action("MarketPlaceMPSale","Home")">3D Secure olmadan Ödeme </a></li>
                         <li><a href="@Url.Action("MarketPlaceReleasePayment","Home")">Ödeme Onay Servisi </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false">İşlem Sorgulama</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu5">
+                        <li><a href="@Url.Action("TransactionQueryByOrderId","Home")">Sipariş Numarası ile İşlem Sorgulama</a></li>
+                        <li><a href="@Url.Action("TransactionQueryByMPAY","Home")">MPAY ile İşlem Sorgulama</a></li>
                     </ul>
                 </li>
             </ul>  

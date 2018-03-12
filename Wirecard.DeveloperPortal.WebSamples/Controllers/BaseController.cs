@@ -11,8 +11,8 @@ namespace Wirecard.DeveloperPortal.WebSamples.Controllers
     {
         public Settings settings = new Settings()
         {
-            UserCode = "",
-            Pin = "",
+            UserCode = "20923",
+            Pin = "535D7D1B5DA6407EB7F6",
             BaseUrl = "https://www.wirecard.com.tr/SGate/Gate"
         };
     }
